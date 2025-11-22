@@ -62,9 +62,36 @@ INTERFACESv6=""
 ```shell
 $ sudo nano /etc/dhcp/dhcpd.conf
 
+option domain-name "edu.local";
+option domain-name-servers 8.8.8.8;
+default-lease-time 600;
+max-lease-time 7200;
+ddns-update-style none;
+authoritative;
+log-facility local7;
+
 subnet 10.10.10.0 netmask 255.255.255.0 {
 }
+
+subnet 172.16.111.0 netmask 255.255.255.0 {
+    range 172.16.111.10 172.16.111.250;
+    option routers 172.16.111.254;
+    host h1 {
+        option host-name "h1.edu.local";
+        hardware ethernet 50:91:6a:00:0d:00;
+        fixed-address 172.16.111.8;
+        }
+}
+subnet 172.16.112.0 netmask 255.255.255.0 {
+   range 172.16.112.10 172.16.112.250;
+   option routers 172.16.112.254;
+}
 ```
+
+```shell
+$ cat /etc/dhcp/dhcpd.conf | sed '/^#/d;/^$/d'
+```
+
 ```shell
 $ sudo systemctl status isc-dhcp-server
 $ sudo systemctl start isc-dhcp-server
@@ -73,31 +100,10 @@ $ sudo systemctl enable isc-dhcp-server
 ```
 
 ```shell
-$ sudo nano /etc/dhcp/dhcpd.conf
-
-subnet 10.10.10.0 netmask 255.255.255.0 {
-}
-
-subnet 172.16.111.0 netmask 255.255.255.0 {
-   range 172.16.111.10 172.16.111.250;
-   option routers 172.16.111.254;
-   option domain-name-servers 8.8.8.8;
-   default-lease-time 600;
-   max-lease-time 7200;
-}
-subnet 172.16.112.0 netmask 255.255.255.0 {
-   range 172.16.112.10 172.16.112.250;
-   option routers 172.16.112.254;
-   option domain-name-servers 8.8.8.8;
-   default-lease-time 600;
-   max-lease-time 7200;
-}
-```
-```shell
 $ sudo systemctl restart isc-dhcp-server
-
 $ sudo dhcpd -t
 ```
+
 ```shell
 $ cat /var/lib/dhcp/dhcpd.leases
 ```
