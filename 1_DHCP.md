@@ -8,6 +8,7 @@
 
 ### Корпоративті желінің топологиясы
 ![Topology Enterprise Network Design](Topology/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
+[Download Link for PNETLab Topology File] (UNL extension files/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)
 
 ### DHCP-ды орнату
 ```shell
