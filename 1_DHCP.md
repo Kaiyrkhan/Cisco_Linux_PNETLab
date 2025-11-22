@@ -42,9 +42,6 @@ $ ping google.com
 ### DHCP пакетін (package) орнату
 ```shell
 $ sudo apt update
-$ sudo apt upgrade -y
-```
-```shell
 $ sudo apt install -y isc-dhcp-server
 ```
 ```shell
