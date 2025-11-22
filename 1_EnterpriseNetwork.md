@@ -13,7 +13,7 @@
   9) NAT;
   10) Default Static Routing.
 
-> SVI — L3 интерфейс, яғни VLAN-ның виртуалды routed интерфейсі
+> SVI — L3 интерфейс, яғни VLAN-ның виртуалды routed интерфейсі (virtual routed interface)
 
 ### Корпоративті желінің топологиясы
 ![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
