@@ -60,6 +60,12 @@ INTERFACESv6=""
 ```
 
 ```shell
+$ sudo nano /etc/dhcp/dhcpd.conf
+
+subnet 10.10.10.0 netmask 255.255.255.0 {
+}
+```
+```shell
 $ sudo systemctl status isc-dhcp-server
 $ sudo systemctl start isc-dhcp-server
 $ sudo systemctl is-enabled isc-dhcp-server
@@ -87,13 +93,11 @@ subnet 172.16.112.0 netmask 255.255.255.0 {
    max-lease-time 7200;
 }
 ```
-
 ```shell
 $ sudo systemctl restart isc-dhcp-server
 
 $ sudo dhcpd -t
 ```
-
 ```shell
 $ cat /var/lib/dhcp/dhcpd.leases
 ```
