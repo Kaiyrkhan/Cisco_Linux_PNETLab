@@ -10,7 +10,7 @@
 ![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
 [Download Link for PNETLab Topology File](Topology/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)
 
-### Құрылғының негізгі конфигурациясын баптау
+### Debian Linux дистрибутивін баптау
 ```shell
 Құрылғының атауын (Device Name) өзгерту
 $ sudo hostnamectl set-hostname dhcp
