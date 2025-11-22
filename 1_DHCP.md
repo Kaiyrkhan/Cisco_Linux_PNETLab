@@ -1,4 +1,4 @@
-# DHCP Server on Debian12
+# DHCP Server on Debian
 
 ### Тақырыбы: Debian Linux дистрибутивінде DHCP серверді конфигурациялау
 ### Жұмыстың орындалу қадамы: 
