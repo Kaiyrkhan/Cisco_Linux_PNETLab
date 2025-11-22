@@ -19,11 +19,26 @@
 ![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
 [Download Link for PNETLab Topology File](Topology/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)
 
-### A1,A2 — Access Layer Switch-ті конфигурациялау
+### A1, A2 – Access Layer Switch-ті конфигурациялау
 ```shell
 Switch> enable
 Switch# configure terminal
 Switch(config)# hostname A1
 A1(config)#
 ```
-### A1,A2 – Access Layer Switch-ті конфигурациялау
+
+### D1, D2 – Distribution Layer Switch-ті конфигурациялау
+```shell
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname D1
+D1(config)#
+```
+
+### C1 – Core Layer Switch-ті конфигурациялау
+```shell
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname C1
+C1(config)#
+```
