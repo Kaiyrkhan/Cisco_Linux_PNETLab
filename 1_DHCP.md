@@ -112,3 +112,16 @@ $ sudo dhcpd -t
 ```shell
 $ cat /var/lib/dhcp/dhcpd.leases
 ```
+
+### DHCP Relay Agent құрылғыны конфигурациялау
+```shell
+D1(config)# interface vlan 111
+D1(config)# ip helper-address 10.10.10.67
+D1(config)# interface vlan 112
+D1(config)# ip helper-address 10.10.10.67
+
+D2(config)# interface vlan 111
+D2(config)# ip helper-address 10.10.10.67
+D2(config)# interface vlan 112
+D2(config)# ip helper-address 10.10.10.67
+```
