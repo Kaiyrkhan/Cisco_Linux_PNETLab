@@ -21,6 +21,13 @@ $ sudo apt install -y isc-dhcp-server
 
 ### DHCP-ды конфигурациялау
 ```shell
+Құрылғының атауын (Device Name) өзгерту
+$ sudo hostnamectl set-hostname dhcp
+$ sudo nano /etc/hosts
+127.0.1.1  dhcp
+$ bash
+```
+```shell
 $ ip address
 ```
 ```shell
