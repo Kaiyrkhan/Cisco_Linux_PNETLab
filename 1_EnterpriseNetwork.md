@@ -2,16 +2,18 @@
 
 ### Тақырыбы: Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 ### Жұмыстың орындалу қадамы: 
-  1) IP Addressing;
-  2) VLAN;
-  3) Link Aggregation;
-  4) STP;
+  1) VLAN;
+  2) Link Aggregation. EtherChannel;
+  3) Spanning Tree Protocol (STP);
+  4) Switched Virtual Interface (SVI);
   5) HSRP;
-  6) Single area OSPFv2;
-  7) Default Static Routing;
-  8) DHCP;
-  9) ACL;
-  10) NAT.
+  6) IP Address Configuration;
+  7) Single area OSPFv2;
+  8) ACL;
+  9) NAT;
+  10) Default Static Routing.
+
+> SVI — L3 интерфейс, яғни VLAN-ның виртуалды routed интерфейсі
 
 ### Корпоративті желінің топологиясы
 ![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
