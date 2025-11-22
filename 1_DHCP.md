@@ -2,15 +2,35 @@
 
 ### Тақырыбы: Debian Linux дистрибутивінде DHCP-ды конфигурациялау
 ### Жұмыстың орындалу қадамы: 
-  1) DHCP-ды орнату;
-  2) DHCP-ды конфигурациялау;
+  1) DHCP пакетін (package) орнату;
+  2) DHCP серверді конфигурациялау;
   3) Нәтижені тексеру.
 
 ### Корпоративті желінің топологиясы
 ![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
 [Download Link for PNETLab Topology File](Topology/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)
 
-### DHCP-ды орнату
+### Құрылғының негізгі конфигурациясын баптау
+```shell
+Құрылғының атауын (Device Name) өзгерту
+$ sudo hostnamectl set-hostname dhcp
+$ sudo nano /etc/hosts
+127.0.1.1  dhcp
+$ bash
+```
+```shell
+Желілік интерфейсті конфигурациялау
+$ ip address
+$ sudo nano /etc/network/interfaces
+  auto ens3
+  iface ens3 inet static
+    address 10.10.10.67
+    netmask 255.255.255.0
+    gateway 10.10.10.1
+    dns-nameservers 8.8.8.8
+```
+
+### DHCP пакетін (package) орнату
 ```shell
 $ sudo apt update
 $ sudo apt upgrade -y
@@ -19,14 +39,7 @@ $ sudo apt upgrade -y
 $ sudo apt install -y isc-dhcp-server
 ```
 
-### DHCP-ды конфигурациялау
-```shell
-Құрылғының атауын (Device Name) өзгерту
-$ sudo hostnamectl set-hostname dhcp
-$ sudo nano /etc/hosts
-127.0.1.1  dhcp
-$ bash
-```
+### DHCP серверді конфигурациялау
 ```shell
 $ ip address
 ```
