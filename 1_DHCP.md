@@ -87,7 +87,6 @@ subnet 172.16.111.0 netmask 255.255.255.0 {
     range 172.16.111.10 172.16.111.250;
     option routers 172.16.111.254;
     host h1 {
-        option host-name "h1.edu.local";
         hardware ethernet 50:91:6a:00:0d:00;
         fixed-address 172.16.111.8;
         }
