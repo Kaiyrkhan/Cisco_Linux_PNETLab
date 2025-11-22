@@ -123,3 +123,22 @@ D2(config)# ip helper-address 10.10.10.67
 D2(config)# interface vlan 112
 D2(config)# ip helper-address 10.10.10.67
 ```
+
+### Нәтижені тексеру
+```shell
+student@h1:~$ ip address
+student@h1:~$ ip route
+student@h1:~$ cat /etc/resolv.conf
+
+student@h2:~$ ip address
+student@h2:~$ ip route
+student@h2:~$ resolvectl status
+
+student@h3:~$ ip address
+student@h3:~$ ip route
+student@h3:~$ cat /etc/resolv.conf
+
+student@h4:~$ ip address
+student@h4:~$ ip route
+student@h4:~$ cat /etc/resolv.conf
+```
