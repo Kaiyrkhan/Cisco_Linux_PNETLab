@@ -28,6 +28,11 @@ $ sudo nano /etc/network/interfaces
     netmask 255.255.255.0
     gateway 10.10.10.1
     dns-nameservers 8.8.8.8
+
+$ sudo systemctl restart networking
+
+$ ping 8.8.8.8
+$ ping google.com
 ```
 
 ### DHCP пакетін (package) орнату
