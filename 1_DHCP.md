@@ -83,6 +83,8 @@ $ sudo systemctl enable isc-dhcp-server
 ```
 
 ```shell
+$ sudo nano /etc/dhcp/dhcpd.conf
+
 subnet 172.16.111.0 netmask 255.255.255.0 {
     range 172.16.111.10 172.16.111.250;
     option routers 172.16.111.254;
