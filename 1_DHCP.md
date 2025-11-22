@@ -100,9 +100,7 @@ subnet 172.16.112.0 netmask 255.255.255.0 {
     }
 ```
 
-```shell
-$ cat /etc/dhcp/dhcpd.conf | sed '/^#/d;/^$/d'
-```
+> $ cat /etc/dhcp/dhcpd.conf | sed '/^#/d;/^$/d'
 
 ```shell
 $ sudo systemctl restart isc-dhcp-server
