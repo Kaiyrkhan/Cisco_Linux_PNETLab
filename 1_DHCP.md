@@ -31,6 +31,10 @@ $ sudo nano /etc/network/interfaces
 
 $ sudo systemctl restart networking
 
+$ ip address
+$ ip route
+$ cat /etc/resolv.conf
+
 $ ping 8.8.8.8
 $ ping google.com
 ```
@@ -42,6 +46,10 @@ $ sudo apt upgrade -y
 ```
 ```shell
 $ sudo apt install -y isc-dhcp-server
+```
+```shell
+$ sudo dpkg -l isc-dhcp-server
+$ sudo dpkg -s isc-dhcp-server
 ```
 
 ### DHCP серверді конфигурациялау
