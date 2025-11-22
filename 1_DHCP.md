@@ -7,7 +7,7 @@
   3) Нәтижені тексеру.
 
 ### Корпоративті желінің топологиясы
-![Topology Enterprise Campus Network](Topology_Enterprise_Compus_Network_v1.png)
+![Topology Enterprise Network Design](Topology/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
 
 ### DHCP-ды орнату
 ```shell
