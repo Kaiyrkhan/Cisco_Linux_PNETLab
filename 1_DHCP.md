@@ -90,11 +90,12 @@ subnet 172.16.111.0 netmask 255.255.255.0 {
         hardware ethernet 50:91:6a:00:0d:00;
         fixed-address 172.16.111.8;
         }
-}
+    }
+
 subnet 172.16.112.0 netmask 255.255.255.0 {
-   range 172.16.112.10 172.16.112.250;
-   option routers 172.16.112.254;
-}
+    range 172.16.112.10 172.16.112.250;
+    option routers 172.16.112.254;
+    }
 ```
 
 ```shell
