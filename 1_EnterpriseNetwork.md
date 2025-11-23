@@ -165,6 +165,43 @@ C1# show run | section ospf
 C1# show ip ospf neighbor
 ```
 
+### SRV-D1 – Distribution Layer Switch-ті конфигурациялау
+```shell
+Switch> enable
+Switch# configure terminal
+
+Switch(config)# hostname SRV-D1
+SRV-D1(config)# 
+
+SRV-D1(config)# vlan 10
+
+SRV-D1(config)# interface range g1/1-3
+SRV-D1(config)# switchport mode access
+SRV-D1(config)# switchport access vlan 10
+
+SRV-D1# show vlan brief
+
+SRV-D1(config)# interface g0/1
+SRV-D1(config-if)# ip address 10.1.1.114 255.255.255.252
+SRV-D1(config-if)# no shutdown
+
+SRV-D1(config)# interface vlan 10
+SRV-D1(config-if)# ip address 10.10.10.1 255.255.255.0
+SRV-D1(config-if)# no shutdown
+
+SRV-D1(config)# interface Loopback 50
+SRV-D1(config-if)# ip address 50.5.5.5 255.255.255.255
+SRV-D1(config-if)# no shutdown
+
+SRV-D1(config)# ip routing
+SRV-D1(config)# router ospf 1
+SRV-D1(config-router)# network 50.5.5.5 0.0.0.0 area 0
+SRV-D1(config-router)# network 10.1.1.112 0.0.0.3 area 0
+SRV-D1(config-router)# network 10.10.10.0 0.0.0.255 area 0
+
+SRV-D1# show ip ospf neighbor
+```
+
 ### EdgeR1 – Edge Router-ді конфигурациялау
 ```shell
 Router> enable
