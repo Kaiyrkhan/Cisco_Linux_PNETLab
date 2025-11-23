@@ -121,6 +121,9 @@ D1(config-router)# network 50.7.7.7 0.0.0.0 area 0
 D1(config-router)# network 10.1.1.104 0.0.0.3 area 0
 D1(config-router)# network 172.16.111.0 0.0.0.255 area 0
 D1(config-router)# network 172.16.112.0 0.0.0.255 area 0
+
+D1# show run | section ospf
+D1# show ip ospf neighbor
 ```
 
 ### C1 – Core Layer Switch-ті конфигурациялау
@@ -157,6 +160,9 @@ C1(config-router)# network 10.1.1.100 0.0.0.3 area 0
 C1(config-router)# network 10.1.1.104 0.0.0.3 area 0
 C1(config-router)# network 10.1.1.108 0.0.0.3 area 0
 C1(config-router)# network 10.1.1.112 0.0.0.3 area 0
+
+C1# show run | section ospf
+C1# show ip ospf neighbor
 ```
 
 ### EdgeR1 – Edge Router-ді конфигурациялау
@@ -165,5 +171,39 @@ Router> enable
 Router# configure terminal
 
 Router(config)# hostname EdgeR1
-EdgeR1(config)# 
+EdgeR1(config)#
+
+EdgeR1(config)# interface Loopback 50
+EdgeR1(config-if)# ip address 50.1.1.1 255.255.255.255
+
+EdgeR1(config)# interface g0/1
+EdgeR1(config-if)# ip address 10.1.1.101 255.255.255.252
+EdgeR1(config-if)# no shutdown
+
+EdgeR1(config)# interface g0/0
+EdgeR1(config-if)# ip address dhcp
+EdgeR1(config-if)# no shutdown
+
+EdgeR1(config)# router ospf 1
+EdgeR1(config-router)# network 50.1.1.1 0.0.0.0 area 0
+EdgeR1(config-router)# network 10.1.1.100 0.0.0.3 area 0
+
+EdgeR1# show ip ospf neighbor
+
+EdgeR1(config)# interface g0/0
+EdgeR1(config-if)# ip nat outside
+EdgeR1(config)# interface g0/1
+EdgeR1(config-if)# ip nat inside
+
+EdgeR1(config)# ip access-list standard NAT
+EdgeR1(config-std-nacl)# permit 172.16.111.0 0.0.0.255
+EdgeR1(config-std-nacl)# permit 172.16.112.0 0.0.0.255
+EdgeR1(config-std-nacl)# permit 10.10.10.0 0.0.0.255
+
+EdgeR1(config)# ip nat inside source list NAT interface g0/0 overload
+
+EdgeR1(config)# router ospf 1
+EdgeR1(config-router)# default-information originate
+
+EdgeR1# show run | section NAT
 ```
