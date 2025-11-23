@@ -9,8 +9,8 @@
   5) HSRP;
   6) IP Address Configuration;
   7) Single area OSPFv2;
-  8) ACL;
-  9) NAT;
+  8) Access Control List (ACL);
+  9) Network Address Translation (NAT);
   10) Default Static Routing.
 
 > SVI — L3 интерфейс, яғни VLAN-ның виртуалды routed интерфейсі (virtual routed interface)
