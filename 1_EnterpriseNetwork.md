@@ -23,14 +23,35 @@
 ```shell
 Switch> enable
 Switch# configure terminal
+
 Switch(config)# hostname A1
 A1(config)#
+
+A1(config)# vlan 111
+A1(config)# vlan 112
+A1(config)# do show vlan brief
+
+A1(config)# interface g1/1
+A1(config)# switchport mode access
+A1(config)# switchport access vlan 111
+
+A1(config)# interface g1/2
+A1(config)# switchport mode access
+A1(config)# switchport access vlan 112
+
+A1(config)# interface range g0/1-2
+A1(config)# switchport mode trunk
+A1(config)# switchport trunk allowed vlan 111,112
+A1(config)# switchport nonegotiate
+
+A1(config)# spanning-tree mode rapid-pvst
 ```
 
 ### D1, D2 – Distribution Layer Switch-ті конфигурациялау
 ```shell
 Switch> enable
 Switch# configure terminal
+
 Switch(config)# hostname D1
 D1(config)#
 ```
@@ -39,6 +60,7 @@ D1(config)#
 ```shell
 Switch> enable
 Switch# configure terminal
+
 Switch(config)# hostname C1
 C1(config)#
 ```
