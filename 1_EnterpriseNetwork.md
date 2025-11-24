@@ -16,7 +16,6 @@
 > SVI — L3 интерфейс, яғни VLAN-ның виртуалды routed интерфейсі (virtual routed interface)
 
 ### Корпоративті желінің топологиясы
-![Topology Enterprise Network Design](images/Topology_Physical_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
 ![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
 [Download Link for PNETLab Topology File](Topology/Topology_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)
 
