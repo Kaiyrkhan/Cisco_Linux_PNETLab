@@ -244,32 +244,3 @@ EdgeR1(config-router)# default-information originate
 
 EdgeR1# show run | section NAT
 ```
-
-### Debian Linux дистрибутивін баптау
-```shell
-Құрылғының атауын (Device Name) өзгерту
-$ sudo hostnamectl set-hostname h1
-$ sudo nano /etc/hosts
-127.0.1.1  h1
-$ bash
-```
-```shell
-Желілік интерфейсті конфигурациялау
-$ ip address
-$ sudo nano /etc/network/interfaces
-  auto ens3
-  iface ens3 inet static
-    address 172.16.111.10
-    netmask 255.255.255.0
-    gateway 172.16.111.254
-    dns-nameservers 8.8.8.8
-
-$ sudo systemctl restart networking
-
-$ ip address
-$ ip route
-$ cat /etc/resolv.conf
-
-$ ping 8.8.8.8
-$ ping google.com
-```
