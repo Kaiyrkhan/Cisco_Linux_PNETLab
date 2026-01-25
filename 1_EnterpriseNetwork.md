@@ -2,11 +2,11 @@
 
 ### Тақырыбы: Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 ### Жұмыстың орындалу қадамы: 
-  1) VLAN;
+  1) Virtual LAN (VLAN);
   2) Link Aggregation. EtherChannel;
   3) Spanning Tree Protocol (STP);
   4) Switched Virtual Interface (SVI);
-  5) HSRP;
+  5) Hot Standby Router Protocol (HSRP);
   6) IP Address Configuration;
   7) Single area OSPFv2;
   8) Access Control List (ACL);
