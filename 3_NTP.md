@@ -68,7 +68,7 @@ $ timedatectl status
 ```shell
 RHEL/Rocky/Oracle
 $ sudo vi /etc/chrony.conf
-#pool 2.rocky.pool.ntp.org iburst         // артық DNS атауларды "#" Comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!
+#pool 2.rocky.pool.ntp.org iburst        // артық DNS атауларды "#" Comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!
 
 Debian/Ubuntu
 $ sudo nano /etc/chrony/chrony.conf
@@ -87,14 +87,12 @@ pool time.cloudflare.com iburst
 bindcmdaddress 0.0.0.0
 bindcmdaddress ::
 
-# Allow NTP client access from Local Network
+# Allow NTP client access from Local Network (жергілікті желіге рұқсат ету)
 allow 172.16.11.0/24
 allow 172.16.12.0/24
 
 # NTP authentication
 keyfile /etc/chrony/chrony.keys
-немесе
-keyfile /etc/chrony/keys
 
 # Log files location
 logdir /var/log/chrony
@@ -107,35 +105,15 @@ rtcsync
 makestep 1 3
 ```
 
+NTP authentication
 ```shell
-Daemon-ды қайта жүктеу
-$ sudo systemctl restart chronyd
+$ sudo nano /etc/chrony/chrony.keys
+# <key_id> <algorithm> <secret_key>
+1 MD5 Hello@123
+
+CTRL+O, ENTER, CTRL+X
 ```
-
-**Нәтижені тексеру**
-```shell
-$ sudo chronyc sources -v
-$ sudo chronyc tracking
-$ sudo chronyc activity
-
-$ sudo apt install ntpdate
-$ sudo ntpdate -q 80.241.0.72
-```
-
-**Жергілікті желіге рұқсат беру / NTP Security (optional)**
-```shell
-RHEL/Rocky/Oracle
-$ sudo vi /etc/chrony.conf
-
-Debian/Ubuntu
-$ sudo nano /etc/chrony/chrony.conf
-
-# Allow NTP client access from Local Network
-allow 172.16.11.0/24
-allow 172.16.12.0/24
-
-$ sudo systemctl restart chronyd
-```
+> ЕСКЕРТУ: мұндағы, "MD5" **бас әріппен** жазылуы міндетті!  
 
 **Firewall конфигурациялау**
 ```shell
@@ -188,8 +166,7 @@ $ sudo firewall-cmd --list-all --zone=public
 ```shell
 UFW конфигурациясы (Debian/Ubuntu)
 
-$ sudo systemctl status ufw
-
+$ sudo ufw status
 $ sudo ufw enable
 
 $ sudo ufw allow 123/udp
@@ -199,7 +176,41 @@ $ sudo ufw allow from 172.16.12.0/24 to any port 123 proto udp
 
 $ sudo ufw deny proto udp from any to any port 123
 
+$ sudo ufw reload
 $ sudo ufw status verbose
+```
+
+Daemon-ды қайта жүктеу
+```shell
+$ sudo systemctl restart chronyd
+немесе
+$ sudo systemctl reload chronyd
+
+$ sudo systemctl status chronyd
+```
+
+```shell
+$ ss -tulpn
+Netid  State    Local Address:Port    Peer Address:Port
+udp    -        0.0.0.0:123           0.0.0.0:*
+```
+```shell
+$ sudo apt install -y net-tools
+
+$ netstat -tulpn
+Proto  Local Address  Foreign Address   State
+udp    0.0.0.0:123    0.0.0.0:*         -
+```
+
+**Нәтижені тексеру**
+```shell
+$ sudo chronyc sources -v
+$ sudo chronyc tracking
+$ sudo chronyc activity
+```
+```shell
+$ sudo apt install ntpdate
+$ sudo ntpdate -q 80.241.0.72
 ```
 
 ## NTP Client using Chrony on Linux
