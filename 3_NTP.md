@@ -68,11 +68,11 @@ $ timedatectl status
 ```shell
 RHEL/Rocky/Oracle
 $ sudo vi /etc/chrony.conf
-#pool 2.rocky.pool.ntp.org iburst        // артық DNS атауларды "#" Comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!
+#pool 2.rocky.pool.ntp.org iburst        // артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!
 
 Debian/Ubuntu
 $ sudo nano /etc/chrony/chrony.conf
-#pool 2.debian.pool.ntp.org iburst       // артық DNS атауларды "#" Comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!
+#pool 2.debian.pool.ntp.org iburst       // артық DNS атауларды "#" comment-ге алып, төменгі қатарға Қазақстанға ең жақын NTP сервердің DNS атауын енгіземіз!
 
 # Kazakhstan NTP pool
 server ntp.nic.kz iburst
