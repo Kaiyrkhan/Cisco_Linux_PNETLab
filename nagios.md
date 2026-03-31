@@ -2,10 +2,11 @@
 
 ```shell
 $ sudo apt update
-$ sudo apt install tasksel
+$ sudo apt install -y tasksel
 ```
 
 ```shell
+$ sudo tasksel install lamp-server
 ```
 
 ```shell
