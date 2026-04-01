@@ -2,16 +2,19 @@
 
 ### Тақырыбы: Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 ### Жұмыстың орындалу қадамы: 
-  1) Virtual LAN (VLAN);
+  1) Virtual LAN (Access, Trunk);
   2) Link Aggregation. EtherChannel;
-  3) Spanning Tree Protocol (STP);
+  3) STP (Spanning Tree Protocol);
   4) Switched Virtual Interface (SVI);
-  5) Hot Standby Router Protocol (HSRP);
+  5) HSRP (Hot Standby Router Protocol);
   6) IP Address Configuration;
-  7) Single area OSPFv2;
-  8) Access Control List (ACL);
-  9) Network Address Translation (NAT);
-  10) Default Static Routing.
+  7) Single-Area OSPFv2;
+  8) DHCP;
+  9) NAT, Default Static Route;
+  10) Remote Access (SSH, Telnet);
+  11) NTP;
+  12) DNS;
+  13) ...
 
 > SVI — L3 интерфейс, яғни VLAN-ның виртуалды routed интерфейсі (virtual routed interface)
 
