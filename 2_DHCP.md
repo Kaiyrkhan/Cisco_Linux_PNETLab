@@ -7,8 +7,8 @@
   3) Нәтижені тексеру.
 
 ### Корпоративті желінің топологиясы
-![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)
-[Download Link for PNETLab Topology File](Topology/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)
+![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)  
+[Download Link for PNETLab Topology File](Topology/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)  
 
 ### Debian Linux дистрибутивін баптау
 ```shell
