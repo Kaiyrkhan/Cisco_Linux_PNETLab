@@ -7,7 +7,7 @@
   3) STP (Spanning Tree Protocol);
   4) Switched Virtual Interface (SVI);
   5) HSRP (Hot Standby Router Protocol);
-  6) IP Address Configuration;
+  6) IPv4 Address Configuration;
   7) Single-Area OSPFv2;
   8) DHCP;
   9) NAT, Default Static Route;
