@@ -1,4 +1,4 @@
-# Linux Administration II
+# Cisco-Based Enterprise Network Design and Implementation
 
 ### Course Contents
 1) Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
