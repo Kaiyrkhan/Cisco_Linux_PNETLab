@@ -1,26 +1,36 @@
-# Cisco-Based Enterprise Network Design and Implementation
+# Cisco-Based Enterprise Network Design and Implementation / Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 
-### Тақырыбы: Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
-### Жұмыстың орындалу қадамы: 
-  1) Virtual LAN (Access, Trunk);
-  2) Link Aggregation. EtherChannel;
-  3) STP (Spanning Tree Protocol);
-  4) Switched Virtual Interface (SVI);
-  5) HSRP (Hot Standby Router Protocol);
-  6) IPv4 Address Configuration;
-  7) Single-Area OSPFv2;
-  8) DHCP;
-  9) NAT, Default Static Route;
-  10) Remote Access (SSH, Telnet);
-  11) NTP;
-  12) DNS;
-  13) ...
-
-> SVI — L3 интерфейс, яғни VLAN-ның виртуалды routed интерфейсі (virtual routed interface)
-
-### 🖧 Корпоративті желінің топологиясы
+### Network Topology
 ![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)  
 [Download Link for PNETLab Topology File](Topology/Topology_EnterpriseNetworkDesign_HQ1_v1_Cisco.zip)  
+
+| Device         | Role                                   |
+| ---------------| ---------------------------------------|
+| ISP            | ISP (Internet Service Provider) Router |
+| EdgeR1         | Edge Router                            |
+| С1             | Core Layer Switch                      |
+| D1, D2, SRV-D1 | Distribution Layer Switch               |
+| A1, A2         | Access Layer Switch                    |
+| H1, H2, H3, H4 | End Device                             |
+
+## Scenario
+  1) Configure VLAN (Create VLANs and Access/Trunk Ports);
+     Link Aggregation. EtherChannel;
+     STP (Spanning Tree Protocol);
+  2) HSRP (Hot Standby Router Protocol);
+  3) Single-Area OSPFv2;
+  4) DHCP;
+  5) Network Address Translation (PAT);
+  6) Remote Access (SSH, Telnet);
+  7) NTP;
+  8) DNS;
+  9) HTTP (Nginx, Apache);
+  10) FTP;
+  11) TFTP;
+  12) RADIUS;
+  13) TACACS+;
+  14) LDAP;
+  15) ...
 
 ### A1, A2 – Access Layer Switch-ті конфигурациялау
 ```shell
