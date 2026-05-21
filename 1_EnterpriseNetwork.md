@@ -14,9 +14,9 @@
 | H1, H2, H3, H4 | End Device                             |
 
 ## Scenario
-  1) Configure VLAN (Create VLANs and Access/Trunk Ports);
-     Link Aggregation. EtherChannel;
-     STP (Spanning Tree Protocol);
+  1) Configure VLAN (Create VLANs and Access/Trunk Ports);  
+     Link Aggregation. EtherChannel;  
+     STP (Spanning Tree Protocol);  
   2) HSRP (Hot Standby Router Protocol);
   3) Single-Area OSPFv2;
   4) DHCP;
