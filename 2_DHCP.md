@@ -11,7 +11,7 @@
 
 ### Debian Linux дистрибутивін баптау
 ```shell
-Құрылғының атауын (Device Name) өзгерту
+Құрылғының атауын (Device Hostname) өзгерту
 $ sudo hostnamectl set-hostname dhcp
 $ sudo nano /etc/hosts
 127.0.1.1  dhcp
