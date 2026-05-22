@@ -1,8 +1,8 @@
 # Cisco-Based Enterprise Network Design and Implementation / Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
 
 ### Network Topology
-![Topology Enterprise Network Design](images/Topology_PNETLab_EnterpriseNetworkDesign_HQ1_v1_Cisco.png)  
-[Download Link for PNETLab Topology File](Topology/Topology_EnterpriseNetworkDesign_Cisco_HQ1_v1.zip)  
+![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_Cisco_HQ_v1.png)  
+[Download Link for PNETLab Topology File](Topology/Topology_EnterpriseNetworkDesign_Cisco_HQ_v1.zip)  
 
 | Device         | Role                                   |
 | ---------------| ---------------------------------------|
