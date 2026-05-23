@@ -161,7 +161,7 @@ D2(config)# ip helper-address 10.10.10.67
 ### Нәтижені тексеру
 
 ```shell
-H1 - Debain
+# H1 (Debain)
 student@h1:~$ ip address
 student@h1:~$ sudo dhclient -v ens3
 
@@ -173,7 +173,7 @@ student@h1:~$ sudo systemctl restart networking
 ```
 
 ```shell
-H2 - Ubuntu
+# H2 (Ubuntu)
 student@h2:~$ ip address
 student@h2:~$ ip route
 student@h2:~$ resolvectl status
@@ -182,7 +182,7 @@ student@h2:~$ sudo netplan apply
 ```
 
 ```shell
-H3 - Rocky
+# H3 (Rocky)
 student@h3:~$ ip address
 student@h3:~$ ip route
 student@h3:~$ cat /etc/resolv.conf
@@ -191,7 +191,7 @@ student@h3:~$ sudo systemctl restart NetworkManager
 ```
 
 ```shell
-H4 - openEuler
+# H4 (openEuler)
 student@h4:~$ ip address
 student@h4:~$ ip route
 student@h4:~$ cat /etc/resolv.conf
@@ -200,6 +200,6 @@ student@h4:~$ sudo systemctl restart NetworkManager
 ```
 
 ```shell
-DHCP Server
+# DHCP Server
 student@dhcp:~$ cat /var/lib/dhcp/dhcpd.leases
 ```
