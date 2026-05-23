@@ -1,11 +1,17 @@
-# Configure DHCP Server on Linux / Linux дистрибутивінде DHCP серверді конфигурациялау
+# Linux дистрибутивінде DHCP серверді конфигурациялау / Configure DHCP Server on Linux
+
+  1) Debian 12/13 Linux дистрибутивінде DHCP серверді конфигурациялау;
+  2) Ubuntu 24.04.4 LTS Linux дистрибутивінде DHCP серверді конфигурациялау;
+  3) Rocky 9.7 Linux дистрибутивінде DHCP серверді конфигурациялау;
+  4) openEuler 24.03 LTS SP3 Linux дистрибутивінде DHCP серверді конфигурациялау;
+  5) Oracle 7.9 Linux дистрибутивінде DHCP серверді конфигурациялау.
 
 ### Корпоративті желінің топологиясы
 ![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_Cisco_HQ_v1.png)  
 
-## Debian Linux дистрибутивінде DHCP серверді конфигурациялау
+## Debian 12/13 Linux дистрибутивінде DHCP серверді конфигурациялау
 
-### Жұмыстың орындалу қадамы: 
+#### Жұмыстың орындалу қадамы: 
   1) Құрылғының атауын (Device Hostname) өзгерту;
   2) Желілік интерфейсті конфигурациялау;
   3) DHCP пакетін (package) орнату;
@@ -13,7 +19,7 @@
   5) DHCP Relay Agent құрылғыны конфигурациялау;
   6) Нәтижені тексеру.
 
-### Құрылғының атауын (Device Hostname) өзгерту
+#### 1-қадам: Құрылғының атауын (Device Hostname) өзгерту
 
 ```shell
 $ sudo hostnamectl set-hostname dhcp
@@ -27,7 +33,7 @@ CTRL+L
 $ bash
 ```
 
-### Желілік интерфейсті конфигурациялау
+#### 2-қадам: Желілік интерфейсті конфигурациялау
 
 ```shell
 $ ip address
@@ -53,7 +59,7 @@ $ ip route
 $ cat /etc/resolv.conf
 ```
 
-### DHCP пакетін (package) орнату
+#### 3-қадам: DHCP пакетін (package) орнату
 
 ```shell
 $ ping 8.8.8.8
@@ -69,7 +75,7 @@ $ sudo dpkg -l isc-dhcp-server
 $ sudo dpkg -s isc-dhcp-server
 ```
 
-### DHCP серверді конфигурациялау
+#### 4-қадам: DHCP серверді конфигурациялау
 
 ```shell
 $ ip address
@@ -140,7 +146,7 @@ $ sudo dhcpd -t
 $ cat /var/lib/dhcp/dhcpd.leases
 ```
 
-### DHCP Relay Agent құрылғыны конфигурациялау
+#### 5-қадам: DHCP Relay Agent құрылғыны конфигурациялау
 
 ```shell
 # D1 Switch
@@ -158,7 +164,7 @@ D2(config)# interface vlan 112
 D2(config)# ip helper-address 10.10.10.67
 ```
 
-### Нәтижені тексеру
+#### 6-қадам: Нәтижені тексеру
 
 ```shell
 # H1 (Debain)
@@ -202,4 +208,9 @@ student@h4:~$ sudo systemctl restart NetworkManager
 ```shell
 # DHCP Server
 student@dhcp:~$ cat /var/lib/dhcp/dhcpd.leases
+```
+
+## Ubuntu 24.04.4 LTS Linux дистрибутивінде DHCP серверді конфигурациялау
+
+```shell
 ```
