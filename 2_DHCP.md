@@ -1,24 +1,35 @@
-# DHCP Server on Debian
-
-### Тақырыбы: Debian Linux дистрибутивінде DHCP серверді конфигурациялау
-### Жұмыстың орындалу қадамы: 
-  1) DHCP пакетін (package) орнату;
-  2) DHCP серверді конфигурациялау;
-  3) Нәтижені тексеру.
+# Configure DHCP Server on Linux / Linux дистрибутивінде DHCP серверді конфигурациялау
 
 ### Корпоративті желінің топологиясы
 ![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_Cisco_HQ_v1.png)  
 
-### Debian Linux дистрибутивін баптау
+## Debian Linux дистрибутивінде DHCP серверді конфигурациялау
+
+### Жұмыстың орындалу қадамы: 
+  1) Құрылғының атауын (Device Hostname) өзгерту;
+  2) Желілік интерфейсті конфигурациялау;
+  3) DHCP пакетін (package) орнату;
+  4) DHCP серверді конфигурациялау;
+  5) DHCP Relay Agent құрылғыны конфигурациялау;
+  6) Нәтижені тексеру.
+
+### Құрылғының атауын (Device Hostname) өзгерту
+
 ```shell
-Құрылғының атауын (Device Hostname) өзгерту
 $ sudo hostnamectl set-hostname dhcp
+
 $ sudo nano /etc/hosts
 127.0.1.1  dhcp
+
+CTRL+O, ENTER, CTRL+X
+CTRL+L
+
 $ bash
 ```
+
+### Желілік интерфейсті конфигурациялау
+
 ```shell
-Желілік интерфейсті конфигурациялау
 $ ip address
 $ sudo nano /etc/network/interfaces
   auto ens3
@@ -28,17 +39,27 @@ $ sudo nano /etc/network/interfaces
     gateway 10.10.10.1
     dns-nameservers 8.8.8.8
 
-$ sudo systemctl restart networking
+CTRL+O, ENTER, CTRL+X
+CTRL+L
+```
 
+```shell
+$ sudo systemctl restart networking
+```
+
+```shell
 $ ip address
 $ ip route
 $ cat /etc/resolv.conf
+```
 
+### DHCP пакетін (package) орнату
+
+```shell
 $ ping 8.8.8.8
 $ ping google.com
 ```
 
-### DHCP пакетін (package) орнату
 ```shell
 $ sudo apt update
 $ sudo apt install -y isc-dhcp-server
@@ -49,6 +70,7 @@ $ sudo dpkg -s isc-dhcp-server
 ```
 
 ### DHCP серверді конфигурациялау
+
 ```shell
 $ ip address
 ```
@@ -71,52 +93,65 @@ log-facility local7;
 
 subnet 10.10.10.0 netmask 255.255.255.0 {
 }
+
+CTRL+O, ENTER, CTRL+X
+CTRL+L
 ```
 
 ```shell
-$ sudo systemctl status isc-dhcp-server
 $ sudo systemctl start isc-dhcp-server
+$ sudo systemctl status isc-dhcp-server
 
-$ sudo systemctl is-enabled isc-dhcp-server
 $ sudo systemctl enable isc-dhcp-server
+$ sudo systemctl is-enabled isc-dhcp-server
 ```
 
 ```shell
 $ sudo nano /etc/dhcp/dhcpd.conf
 
 subnet 172.16.111.0 netmask 255.255.255.0 {
-    range 172.16.111.11 172.16.111.250;
-    option routers 172.16.111.254;
+  range 172.16.111.11 172.16.111.250;
+  option routers 172.16.111.254;
     host h1 {
-        hardware ethernet 50:91:6a:00:0d:00;
-        fixed-address 172.16.111.8;
-        }
+      hardware ethernet 50:91:6a:00:0d:00;
+      fixed-address 172.16.111.8;
     }
+}
 
 subnet 172.16.112.0 netmask 255.255.255.0 {
-    range 172.16.112.11 172.16.112.250;
-    option routers 172.16.112.254;
-    }
+  range 172.16.112.11 172.16.112.250;
+  option routers 172.16.112.254;
+}
+
+CTRL+O, ENTER, CTRL+X
+CTRL+L
 ```
 
-> $ cat /etc/dhcp/dhcpd.conf | sed '/^#/d;/^$/d'
+```shell
+$ cat /etc/dhcp/dhcpd.conf | sed '/^#/d;/^$/d'
+```
 
 ```shell
 $ sudo systemctl restart isc-dhcp-server
-$ sudo dhcpd -t
 ```
 
 ```shell
+$ sudo dhcpd -t
 $ cat /var/lib/dhcp/dhcpd.leases
 ```
 
 ### DHCP Relay Agent құрылғыны конфигурациялау
+
 ```shell
+# D1 Switch
 D1(config)# interface vlan 111
 D1(config)# ip helper-address 10.10.10.67
 D1(config)# interface vlan 112
 D1(config)# ip helper-address 10.10.10.67
+```
 
+```shell
+# D2 Switch
 D2(config)# interface vlan 111
 D2(config)# ip helper-address 10.10.10.67
 D2(config)# interface vlan 112
@@ -124,24 +159,47 @@ D2(config)# ip helper-address 10.10.10.67
 ```
 
 ### Нәтижені тексеру
+
 ```shell
-Debain
+H1 - Debain
+student@h1:~$ ip address
+student@h1:~$ sudo dhclient -v ens3
+
 student@h1:~$ ip address
 student@h1:~$ ip route
 student@h1:~$ cat /etc/resolv.conf
 
-Ubuntu
+student@h1:~$ sudo systemctl restart networking
+```
+
+```shell
+H2 - Ubuntu
 student@h2:~$ ip address
 student@h2:~$ ip route
 student@h2:~$ resolvectl status
 
-Rocky
+student@h2:~$ sudo netplan apply
+```
+
+```shell
+H3 - Rocky
 student@h3:~$ ip address
 student@h3:~$ ip route
 student@h3:~$ cat /etc/resolv.conf
 
-openEuler
+student@h3:~$ sudo systemctl restart NetworkManager
+```
+
+```shell
+H4 - openEuler
 student@h4:~$ ip address
 student@h4:~$ ip route
 student@h4:~$ cat /etc/resolv.conf
+
+student@h4:~$ sudo systemctl restart NetworkManager
+```
+
+```shell
+DHCP Server
+student@dhcp:~$ cat /var/lib/dhcp/dhcpd.leases
 ```
