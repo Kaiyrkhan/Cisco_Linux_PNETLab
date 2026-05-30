@@ -4,7 +4,7 @@
   2) DHCP;
   3) NTP;
   4) DNS;
-  5) HTTP (Nginx, Apache);
+  5) Web (Nginx, Apache);
   6) FTP;
   7) TFTP;
   8) RADIUS;
