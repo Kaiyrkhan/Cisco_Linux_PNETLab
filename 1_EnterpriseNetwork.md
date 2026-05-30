@@ -21,20 +21,7 @@
   3) Single-Area OSPFv2;
   4) DHCP;
   5) Network Address Translation (PAT);
-  6) Remote Access (SSH, Telnet);
-  7) NTP;
-  8) DNS;
-  9) HTTP (Nginx, Apache);
-  10) FTP;
-  11) TFTP;
-  12) RADIUS;
-  13) TACACS+;
-  14) LDAP;
-  15) Squid;
-  16) Samba and NFS;
-  17) Monitoring System (LibreNMS, Icinga, Zabbix);
-  18) Centralized Logging System (syslog-ng/rsyslog + Graylog);
-  19) Network Automation (Ansible, Python).
+  6) Remote Access (SSH, Telnet).
 
 ### A1, A2 – Access Layer Switch-ті конфигурациялау
 ```shell
