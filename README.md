@@ -1,6 +1,5 @@
-# Lab Guide in PNETLab Environment
+# Lab Guide for PNETLab Environment
 
-### Course Contents
   1) Cisco-Based Enterprise Network Design and Implementation;
   2) DHCP;
   3) NTP;
