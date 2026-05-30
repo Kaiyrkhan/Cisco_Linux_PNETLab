@@ -1,14 +1,3 @@
-# Cisco-Based Enterprise Network Design and Implementation
-
-### Course Contents
-1) Cisco құрылғылары негізінде корпоративті желіні жобалау және конфигурациялау
-2) DHCP серверді конфигурациялау
-3) NTP серверді конфигурациялау
-4) DNS серверді конфигурациялау
-5) Web серверді (Apache, Nginx) конфигурациялау
-6) RADIUS серверді конфигурациялау
-7) ...
-
 # Course Contents
   1) Cisco-Based Enterprise Network Design and Implementation;
   2) DHCP;
