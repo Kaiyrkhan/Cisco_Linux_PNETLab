@@ -9,7 +9,7 @@
 | ISP            | ISP (Internet Service Provider) Router |
 | EdgeR1         | Edge Router                            |
 | С1             | Core Layer Switch                      |
-| D1, D2, SRV-D1 | Distribution Layer Switch               |
+| D1, D2, D3     | Distribution Layer Switch               |
 | A1, A2         | Access Layer Switch                    |
 | H1, H2, H3, H4 | End Device                             |
 
@@ -30,7 +30,11 @@
   12) RADIUS;
   13) TACACS+;
   14) LDAP;
-  15) ...
+  15) Squid;
+  16) Samba and NFS;
+  17) Monitoring System (LibreNMS, Icinga, Zabbix);
+  18) Centralized Logging System (syslog-ng/rsyslog + Graylog);
+  19) Network Automation (Ansible, Python).
 
 ### A1, A2 – Access Layer Switch-ті конфигурациялау
 ```shell
