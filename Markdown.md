@@ -12,15 +12,6 @@
 </code></pre>
 </details>
 
-<details>
-  <summary>Толығырақ көру</summary>
-  <pre>
-<Huawei> system-view
-[Huawei] sysname EdgeR1
-[EdgeR1]
-  </pre>
-</details>
-
 ### Development
 
 To start developing with AdminLTE:
