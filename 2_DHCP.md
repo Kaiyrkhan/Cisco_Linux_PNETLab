@@ -7,7 +7,7 @@
   5) Oracle 7.9 Linux дистрибутивінде DHCP серверді конфигурациялау.
 
 ### Корпоративті желінің топологиясы
-![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_Cisco_HQ_v1.png)  
+![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_Cisco_v1.png)  
 
 ## Debian 12/13 Linux дистрибутивінде DHCP серверді конфигурациялау
 
