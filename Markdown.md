@@ -3,7 +3,14 @@
 Мұнда толық ақпарат жазылады. Мысалы: Cisco құрылғылары тізімі, конфигурация т.б.
 </details>
 
-> Бұл – дәйексөз.
+> Бұл – дәйексөз.  
+
+<details>
+  <summary>Header</summary>
+<pre><code>
+Text Text Text
+</code></pre>
+</details>
 
 ### Development
 
