@@ -6,10 +6,19 @@
 > Бұл – дәйексөз.  
 
 <details>
-  <summary>Header</summary>
+  <summary>Толығырақ көру</summary>
 <pre><code>
-Text Text Text
+Мұнда толық ақпарат жазылады. Мысалы: Cisco құрылғылары тізімі, конфигурация т.б.
 </code></pre>
+</details>
+
+<details>
+  <summary>Толығырақ көру</summary>
+  <pre>
+<Huawei> system-view
+[Huawei] sysname EdgeR1
+[EdgeR1]
+  </pre>
 </details>
 
 ### Development
