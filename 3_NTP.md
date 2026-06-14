@@ -204,8 +204,8 @@ udp    0.0.0.0:123    0.0.0.0:*         -
 
 **Нәтижені тексеру**
 ```shell
-$ sudo chronyc sources -v
 $ sudo chronyc tracking
+$ sudo chronyc sources -v
 $ sudo chronyc activity
 ```
 ```shell
@@ -239,8 +239,8 @@ $ sudo systemctl restart chronyd
 
 ```shell
 Нәтижені тексеру
-$ sudo chronyc sources -v
 $ sudo chronyc tracking
+$ sudo chronyc sources -v
 ```
 
 **Қосымша ақпарат**
@@ -259,6 +259,7 @@ $ sudo date -s "2025-08-08 16:35:55"
 $ sudo apt install ntpdate
 
 $ sudo ntpdate 172.16.11.1
+$ sudo ntpdate -q 172.16.11.1
 немесе
 $ sudo ntpdate -u 172.16.11.1        //  егер firewall кедергі жасаса қолдану 
 
