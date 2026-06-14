@@ -261,7 +261,7 @@ $ sudo apt install ntpdate
 $ sudo ntpdate 172.16.11.1
 $ sudo ntpdate -q 172.16.11.1
 немесе
-$ sudo ntpdate -u 172.16.11.1        //  егер firewall кедергі жасаса қолдану 
+$ sudo ntpdate -u 172.16.11.1        // Firewall кедергі жасаған жағдайда қолдану 
 
 $ date
 ```
