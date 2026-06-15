@@ -1,4 +1,4 @@
-# Lab Guide for PNETLab Environment
+# Lab Guide for the PNETLab Environment
 
   1) Cisco-Based Enterprise Network Design and Implementation
   2) DHCP
