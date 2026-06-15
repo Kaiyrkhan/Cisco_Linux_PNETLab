@@ -9,7 +9,7 @@
   7) TFTP
   8) RADIUS
   9) TACACS+
-  10) LDAP
+  10) LDAP (Centralized Authentication and Authorization)
   11) Squid
   12) Samba
   13) NFS
