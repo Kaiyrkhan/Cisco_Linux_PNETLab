@@ -1,15 +1,16 @@
 # Linux дистрибутивінде DHCP серверді конфигурациялау
 
-  1) Debian 12/13 Linux дистрибутивінде DHCP серверді конфигурациялау;
-  2) Ubuntu 24.04.4 LTS Linux дистрибутивінде DHCP серверді конфигурациялау;
-  3) Rocky 9.7 Linux дистрибутивінде DHCP серверді конфигурациялау;
-  4) openEuler 24.03 LTS SP3 Linux дистрибутивінде DHCP серверді конфигурациялау;
-  5) Oracle 7.9 Linux дистрибутивінде DHCP серверді конфигурациялау.
+**Linux Distribution:**
+  1) Debian 13.x
+  2) Ubuntu 24.04.4 LTS
+  3) Rocky 9.x
+  4) openEuler 24.03 LTS SP4
+  5) Oracle 7.9
 
 ### Корпоративті желінің топологиясы
 ![Topology Enterprise Network Design](images/Topology_EnterpriseNetworkDesign_Cisco_v1.png)  
 
-## Debian 12/13 Linux дистрибутивінде DHCP серверді конфигурациялау
+## Debian 13 Linux дистрибутивінде DHCP серверді конфигурациялау
 
 #### Жұмыстың орындалу қадамы: 
   1) Құрылғының атауын (Device Hostname) өзгерту;
